@@ -292,6 +292,18 @@ header {
     display: none;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 23rem
+    /* gap: 23rem */
 }
 
+
+/* FOOTER */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.25rem;
+    font-weight: 500;
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+}
