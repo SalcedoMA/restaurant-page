@@ -1,8 +1,6 @@
 /* FONTS, RESETS AND BODY */
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 
 
@@ -12,22 +10,6 @@
   font-weight: 400;
   font-style: normal;
 }
-
-.neonderthaw-regular {
-    font-family: "Neonderthaw", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-.tilt-neon-regular {
-    font-family: "Tilt Neon", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings:
-      "XROT" 0,
-      "YROT" 0;
-  }
 
 .roboto-regular {
   font-family: "Roboto", sans-serif;
@@ -61,6 +43,7 @@ html, body {
 }
 
 body {
+    position: relative;
     background-image: url("images/wood-floor3.jpg");
     background-size: 50%;
     display: flex;
@@ -76,6 +59,7 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    z-index: 1;
 }
 
 @media (orientation: portrait) {
@@ -122,6 +106,52 @@ header {
     
 
 /* TABLE */
+.chair-grid, .plates {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 33.3333%);
+    grid-template-rows: repeat(3, 33.3333%);
+    justify-items: center;
+    align-items: center;
+  
+  }
+  
+.chair-grid {
+    margin: 5.25rem 0;
+    width: 70vmin;
+    height: 70vmin;
+    border-radius: 8rem;
+    box-shadow: 1.25rem 1.25rem 100px 5px rgb(22, 22, 22);
+}
+
+.chair {
+    position: relative;
+    height: 120%
+}
+  
+    #chair-1 {
+        top: -60px;
+        grid-area: 1 / 2;
+    }
+    
+    #chair-2 {
+        transform: rotate(270deg);
+        right: 60px;
+        grid-area: 2 / 1;
+    }
+    
+    #chair-3 {
+        transform: rotate(90deg);
+        left: 60px;
+        grid-area: 2 / 3;
+    }
+    
+    #chair-4 {
+        transform: rotate(180deg);
+        bottom: -60px;
+        grid-area: 3 / 2;
+    
+    }
 
 .table {
     position: absolute;
@@ -142,9 +172,9 @@ header {
     background-size: cover;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
     padding: 1rem;
+
+
     
     /* OCTAGON SHAPE */
     aspect-ratio: 1;
@@ -156,52 +186,6 @@ header {
     );
   }
 
-.chair-grid, .plates {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, 33.3333%);
-  grid-template-rows: repeat(3, 33.3333%);
-  justify-items: center;
-  align-items: center;
-
-}
-
-.chair-grid {
-    margin: 5.25rem 0;
-    width: 70vmin;
-    height: 70vmin;
-    border-radius: 8rem;
-    box-shadow: 1.25rem 1.25rem 100px 5px rgb(22, 22, 22);
-}
-
-.chair {
-  position: relative;
-  height: 120%
-}
-
-#chair-1 {
-  top: -60px;
-  grid-area: 1 / 2;
-}
-
-#chair-2 {
-  transform: rotate(270deg);
-  right: 60px;
-  grid-area: 2 / 1;
-}
-
-#chair-3 {
-  transform: rotate(90deg);
-  left: 60px;
-  grid-area: 2 / 3;
-}
-
-#chair-4 {
-  transform: rotate(180deg);
-  bottom: -60px;
-  grid-area: 3 / 2;
-
-}
     /* NAV BUTTONS */
     .plates {
         height: 100%;
@@ -298,12 +282,17 @@ header {
 
 /* MAIN */
 #content {
+    background-color:rgb(250, 250, 241, 0.75);
     padding: 5rem 0;
-    display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 19rem;
-    /* display: none; */
+    column-gap: 15rem;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    box-shadow: inset -1px -1px 10px rgb(114, 114, 114),
+                inset 1px 1px 10px rgb(114, 114, 114);
+    ;
+
 }
 
 @media (orientation: portrait) {
@@ -312,12 +301,89 @@ header {
     }
   }
 
+.info-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 15rem;
+}
+
+.reverse {
+    flex-wrap: wrap-reverse;
+}
+
+.info-grid {
+    height: 60vmin;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.information h2 {
+    font-family: "Dancing Script", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 7rem;
+    font-weight: 900;
+    line-height: 90%;
+    text-align: center;
+}
+
+.info-image {
+    width: 75vmin;
+    height: 50vmin;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 10px#414141;
+}
+
+.information p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    font-style: italic;
+    text-align: center;
+}
+
 
 /* FOOTER */
 footer {
+    position: relative;
+    z-index: 999;
     font-size: 1.25rem;
     font-weight: 500;
     display: flex;
     padding: 1rem;
     justify-content: center;
+
 }
+
+/* EXPAND ANIMATION */
+ /* #expand-container {
+    position: relative;
+   overflow: hidden;
+ }
+ 
+ #content{
+   margin-top: -100%;
+   transition: all 1s;
+ }
+ 
+ #content.expanded {
+    margin-top: 0;
+    transform: translateY(100%)
+ }
+
+ .expanded {
+    animation-name: slide-in;
+    animation-duration: 1s;
+ }
+ 
+ .collapsed {
+    background-color: red;
+    transform: translateY(-100%)
+ }   */
