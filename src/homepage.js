@@ -17,17 +17,17 @@ const tableContents = [
     },
     {
         title: "Savor the Moment",
-        text: "Literally ethical yr XOXO authentic coloring book. Disrupt direct trade quinoa.",
+        text: "Fresh ingredients, honest flavors, and a commitment to quality.",
         image: `${stock3}`,
     },
-    {
-        title: "The Art of Dining",
-        text: "Flexitarian blue bottle thundercats pork belly af etsy vaporware hashtag.",
-        image: ``,
-    },
+    // {
+    //     title: "The Art of Dining",
+    //     text: "Flexitarian blue bottle thundercats pork belly af etsy vaporware hashtag.",
+    //     image: ``,
+    // },
     {
         title: "Bite into Bliss",
-        text: "Activated charcoal copper mug franzen.",
+        text: "Life is too short for boring food—indulge in every bite.",
         image: `${stock4}`,
     },
 ];
@@ -59,7 +59,9 @@ function loadHome() {
         const cloth = newTable.querySelector(".cloth");
         cloth.classList.add("information");
         const title = document.createElement("h2");
+        title.classList.add("home-title");
         const text = document.createElement("p");
+        text.classList.add("home-description");
         title.innerHTML = table["title"];
         text.innerHTML = table["text"];
         cloth.append(title, text);
