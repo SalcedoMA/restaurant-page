@@ -1,3 +1,7 @@
 import "./styles.css";
+import { loadHome } from "./homepage";
 
-console.log("it's running!")
+ const button = document.querySelector('#home');
+button.addEventListener('click', event => {
+    loadHome();
+});
