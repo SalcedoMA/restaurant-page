@@ -48,24 +48,26 @@ body {
     background-size: 50%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 
 }
 
 /* HEADER */
 header {
-    flex: 1;
-    min-height: 94vh;
-    position: relative;
+    /* flex: 1; */
+    min-height: max-content;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    z-index: 1;
 }
 
 @media (orientation: portrait) {
   header {
     flex-direction: column;
-    min-height: 97vh;
+    min-height: max(97vh, max-content);
+    padding: 3rem;
+    
   }
 }
 
@@ -117,9 +119,9 @@ header {
   }
   
 .chair-grid {
-    margin: 5.25rem 0;
-    width: 70vmin;
-    height: 70vmin;
+    margin: 7rem;
+    width: 42rem;
+    height: 42rem;
     border-radius: 8rem;
     box-shadow: 1.25rem 1.25rem 100px 5px rgb(22, 22, 22);
 }
@@ -291,7 +293,6 @@ header {
     display: none;
     box-shadow: inset -1px -1px 10px rgb(114, 114, 114),
                 inset 1px 1px 10px rgb(114, 114, 114);
-    ;
 
 }
 
@@ -306,7 +307,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    column-gap: 15rem;
+    column-gap: 13rem;
 }
 
 .reverse {
@@ -315,7 +316,8 @@ header {
 
 
 .info-grid {
-    height: 60vmin;
+    height: 35rem;
+    margin: 3rem 2rem;
 }
 
 .information {
@@ -328,8 +330,8 @@ header {
 }
 
 .info-image {
-    width: 75vmin;
-    height: 50vmin;
+    width: 45rem;
+    height: 30rem;
     object-fit: cover;
     border-radius: 0.75rem;
     box-shadow: 1px 1px 10px#414141;
@@ -370,10 +372,103 @@ header {
     text-align: center;
 }
 
+/* ABOUT */
+.about-title {
+    font-size: 7rem;
+    line-height: 80%;
+    font-family: "Dancing Script", "Playwrite IT Moderna", cursive;
+    text-align: center;
+}
+
+.about-description {
+    font-size: 2rem;
+    text-align:center;
+    /* letter-spacing: -1px; */
+}
+
+.about-description .no-title {
+    font-size: 2.25rem;
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+    line-height: 97%;   
+}
+
+#hours {
+    letter-spacing: -1px;
+
+}
+#hours li{
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 9rem;
+    text-align: left;
+}
+
+/* CONTACT */
+#contact-info {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.suggestion-container {
+    background-color: #ffffff;
+    /* background-image: url("./images/white-fabric.jpg");
+    background-size: cover; */
+    padding: 5rem 3rem;
+    width: 35rem;
+    height: max-content;
+    font-weight: 400;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 10px#acacac;
+    display: flex;
+    align-items: center;
+
+}
+
+.suggestion-box{
+    display: flex;
+    gap: 0.75rem;
+    flex-direction: column;
+    font-size: 2rem;
+    width: 100%;
+}
+
+.suggestion-box div {
+    display: flex;
+    flex-direction: column;
+}
+
+.suggestion-box input {
+    height: 2.5rem;
+    width: 93%;
+    font-size: 1.5rem;
+    padding: 0.25rem;
+}
+
+/* .suggestion-box input:invalid, .suggestion-box textarea:invalid {
+    border: 2px solid red;
+    border-radius: 3px;
+    box-shadow: 0 0 5px red;
+} */
+
+.suggestion-box textarea {
+    height: 10rem;
+    width: 95%;
+    padding: 1rem;
+}
+
+.suggestion-box button {
+    height: 3rem;
+    width: 7rem;
+    font-size: 1.5rem;
+    align-self: center;
+}
+
 /* FOOTER */
 footer {
-    position: relative;
-    z-index: 999;
     font-size: 1.25rem;
     font-weight: 500;
     display: flex;
