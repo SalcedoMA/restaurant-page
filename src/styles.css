@@ -36,7 +36,6 @@
 
 html {
     overflow-y: scroll;
-    /* scroll-behavior: smooth; */
   }
 
 html, body {
@@ -361,10 +360,6 @@ header {
 
 .menu-item {
     font-size: 2rem;
-    /* font-family: sans-serif;
-    text-decoration: underline;
-    font-weight: 400; */
-    /* text-align: center; */
 }
 
 .menu-description {
@@ -372,24 +367,26 @@ header {
     text-align: center;
 }
 
-/* ABOUT */
-.about-title {
+.menu-description ul {
+    list-style: none;
+}
+
+/* ABOUT AND CONTACT*/
+.about-title, .contact-title {
     font-size: 7rem;
     line-height: 80%;
     font-family: "Dancing Script", "Playwrite IT Moderna", cursive;
     text-align: center;
 }
 
-.about-description {
+.about-description, .contact-description {
     font-size: 2rem;
     text-align:center;
-    /* letter-spacing: -1px; */
 }
 
 .about-description .no-title {
     font-size: 2.25rem;
     font-weight: 300;
-    letter-spacing: 0.2rem;
     line-height: 97%;   
 }
 
@@ -401,7 +398,7 @@ header {
     margin: 0.5rem 0;
     display: flex;
     justify-content: space-between;
-    gap: 9rem;
+    gap: 5rem;
     text-align: left;
 }
 
@@ -414,9 +411,7 @@ header {
 }
 
 .suggestion-container {
-    background-color: #ffffff;
-    /* background-image: url("./images/white-fabric.jpg");
-    background-size: cover; */
+    background-color: #f7f7f7;
     padding: 5rem 3rem;
     width: 35rem;
     height: max-content;
@@ -426,6 +421,9 @@ header {
     display: flex;
     align-items: center;
     margin: 8rem 0;
+    /* background-image: url("./images/white-fabric.jpg");
+    background-size: cover; */
+    /* border: 3px solid rgb(165, 87, 42); */
 
 }
 
