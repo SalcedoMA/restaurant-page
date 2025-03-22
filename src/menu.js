@@ -1,4 +1,3 @@
-import { container, wrapper, tableHTML, scrollDown } from "./constants.js";
 import garlicShrimp from "./images/garlic-shrimp.jpg";
 import filetMignon from "./images/filet-mignon.jpg";
 import mushroomRavioli from "./images/mushroom-ravioli.jpg";
@@ -6,7 +5,7 @@ import cremeBrulee from "./images/creme-brulee.jpg";
 import aperolSpritz from "./images/aperol-spritz.jpg";
 import lobsterThermidor from "./images/lobster-thermidor.jpg";
 
-const tableContents = [
+const menuTables = [
     {
         title: "Starters",
         text: `
@@ -171,45 +170,4 @@ const tableContents = [
     },
 ];
 
-function loadMenu() {
-    let alternator = false;
-    container.innerHTML = ``;
-    wrapper.classList.toggle("is-open");
-    if (wrapper.classList.contains("is-open")) {
-        setTimeout(scrollDown, 250);
-    }
-    for (let table of tableContents) {
-        let image = "";
-        if (table["image"] !== "") {
-             image = document.createElement("img");
-             image.src = table["image"];
-             image.classList.add("info-image");
-        }
-        const newTable = document.createElement("div");
-        newTable.classList.add("info-section");
-        container.append(newTable);
-
-        if (alternator) {
-            newTable.classList.add("reverse");
-            newTable.append(image);
-            newTable.innerHTML += tableHTML;
-        } else {
-            newTable.innerHTML += tableHTML;
-            newTable.append(image);
-        }
-
-        const cloth = newTable.querySelector(".cloth");
-        cloth.classList.add("information");
-        const title = document.createElement("h2");
-        title.classList.add("menu-title");
-        const text = document.createElement("div");
-        title.innerHTML = table["title"];
-        text.innerHTML = table["text"];
-        cloth.append(title, text);
-
-        alternator = !alternator;
-    }
-    
-}
-
-export {loadMenu};
+export { menuTables };

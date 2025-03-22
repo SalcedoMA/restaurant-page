@@ -1,8 +1,7 @@
-import { container, tableHTML, wrapper, scrollDown } from "./constants.js";
 import owners from "./images/owners.jpg";
 import kitchen from "./images/kitchen.jpg";
 
-const tableContents = [
+const aboutTables = [
     {
         title: "",
         text: `<p class="no-title"><b>Welcome to Luchoni's</b>, <br> where passion meets flavor! At Luchoni's, we believe that dining is more than just a meal—it’s an experience. Our restaurant is a celebration of culinary artistry, blending traditional recipes with modern techniques to create dishes that delight the senses.</p>`,
@@ -10,7 +9,7 @@ const tableContents = [
     },
     {
         title: "",
-        text: `<p class="no-title">Luchoni's was born from a dream shared by two childhood friends, Luca and Giovanni. Growing up in a small Italian village, they spent countless hours in their grandmothers’ kitchens, learning the secrets of traditional cooking and the importance of sharing meals with loved ones.</p>`,
+        text: `<p class="no-title">Luchoni's was born <br> from a dream shared by two childhood friends, Luca and Giovanni. Growing up in a small Italian village, they spent countless hours in their grandmothers’ kitchens, learning the secrets of traditional cooking and the importance of sharing meals with loved ones.</p>`,
         image: `${owners}`,
     },
     {
@@ -33,47 +32,4 @@ const tableContents = [
     },
 ];
 
-
-function loadAbout() {
-    let alternator = false;
-    container.innerHTML = ``;
-    wrapper.classList.toggle("is-open");
-    if (wrapper.classList.contains("is-open")) {
-        setTimeout(scrollDown, 250);
-    }
-    for (let table of tableContents) {
-        let image = "";
-        if (table["image"] !== "") {
-             image = document.createElement("img");
-             image.src = table["image"];
-             image.classList.add("info-image");
-        }
-        const newTable = document.createElement("div");
-        newTable.classList.add("info-section");
-        container.append(newTable);
-
-        if (alternator) {
-            newTable.classList.add("reverse");
-            newTable.append(image);
-            newTable.innerHTML += tableHTML;
-        } else {
-            newTable.innerHTML += tableHTML;
-            newTable.append(image);
-        }
-
-        const cloth = newTable.querySelector(".cloth");
-        cloth.classList.add("information");
-        const title = document.createElement("h2");
-        title.classList.add("about-title");
-        const text = document.createElement("p");
-        text.classList.add("about-description");
-        title.innerHTML = table["title"];
-        text.innerHTML = table["text"];
-        cloth.append(title, text);
-
-        alternator = !alternator;
-    }
-    
-}
-
-export {loadAbout};
+export {aboutTables};
