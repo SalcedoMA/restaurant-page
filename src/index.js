@@ -79,7 +79,7 @@ buttons.menu.addEventListener('click', event => {
 });
 
 buttons.about.addEventListener('click', event => {
-    loadInfo("about", aboutTables, 225);
+    loadInfo("about", aboutTables, 250);
 });
 
 buttons.contact.addEventListener('click', event => {
