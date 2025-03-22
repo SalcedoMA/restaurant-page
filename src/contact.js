@@ -1,4 +1,4 @@
-import { container, tableHTML } from "./constants.js";
+import { container, tableHTML, wrapper, scrollDown } from "./constants.js";
 
 const tableContents = [
     {
@@ -46,8 +46,11 @@ function suggestionBox() {
 
 function loadContact() {
     let alternator = false;
-    container.style.display = container.style.display === "flex" ? "none": "flex";
     container.innerHTML = ``;
+    wrapper.classList.toggle("is-open");
+    if (wrapper.classList.contains("is-open")) {
+        setTimeout(scrollDown, 750);
+    }
     for (let table of tableContents) {
         let image = "";
         if (table["image"] !== "") {

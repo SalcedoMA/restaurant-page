@@ -1,4 +1,4 @@
-import { container, tableHTML } from "./constants.js";
+import { container, tableHTML, wrapper, scrollDown } from "./constants.js";
 import owners from "./images/owners.jpg";
 import kitchen from "./images/kitchen.jpg";
 
@@ -33,10 +33,14 @@ const tableContents = [
     },
 ];
 
+
 function loadAbout() {
     let alternator = false;
-    container.style.display = container.style.display === "flex" ? "none": "flex";
     container.innerHTML = ``;
+    wrapper.classList.toggle("is-open");
+    if (wrapper.classList.contains("is-open")) {
+        setTimeout(scrollDown, 250);
+    }
     for (let table of tableContents) {
         let image = "";
         if (table["image"] !== "") {

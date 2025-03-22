@@ -1,4 +1,4 @@
-import { container, tableHTML } from "./constants.js";
+import { container, tableHTML, wrapper, scrollDown } from "./constants.js";
 import stock1 from "./images/stock-1.jpeg";
 import stock2 from "./images/stock-2.jpeg";
 import stock3 from "./images/stock-3.jpeg";
@@ -34,8 +34,11 @@ const tableContents = [
 
 function loadHome() {
     let alternator = false;
-    container.style.display = container.style.display === "flex" ? "none": "flex";
     container.innerHTML = ``;
+    wrapper.classList.toggle("is-open");
+    if (wrapper.classList.contains("is-open")) {
+        setTimeout(scrollDown, 250);
+    }
     for (let table of tableContents) {
         let image = "";
         if (table["image"] !== "") {
