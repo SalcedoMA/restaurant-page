@@ -11,7 +11,6 @@ import { loadContact } from "./contact";
     contact: document.querySelector("#contact"),
  }
 
-
 buttons.home.addEventListener('click', event => {
     loadHome();
 });
