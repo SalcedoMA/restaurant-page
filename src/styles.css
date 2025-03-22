@@ -36,6 +36,7 @@
 
 html {
     overflow-y: scroll;
+    /* scroll-behavior: smooth; */
   }
 
 html, body {
@@ -227,7 +228,7 @@ header {
         
         }
 
-    .plates button {
+    .nav-button {
         font-family: "Playwrite IT Moderna";
         width: 100%;
         height: 100%;
@@ -244,7 +245,7 @@ header {
         
     }
 
-    .plates button:hover {
+    .nav-button:hover {
         font-family: "Playwrite IT Moderna";
         color: #ffffff;
         text-shadow:
@@ -258,7 +259,7 @@ header {
             0 0 151px #000;
     }
 
-    .plates button:active {
+    .nav-button:active {
         background-color: #5ea9ff;
         border-color: #5aa2f5;
         background-color: #c9c9c9;
@@ -285,12 +286,11 @@ header {
 /* MAIN */
 #content {
     background-color:rgb(250, 250, 241, 0.75);
-    padding: 5rem 0;
+    display: flex;
     flex-wrap: wrap;
     column-gap: 15rem;
     justify-content: center;
     align-items: center;
-    display: none;
     box-shadow: inset -1px -1px 10px rgb(114, 114, 114),
                 inset 1px 1px 10px rgb(114, 114, 114);
 
@@ -425,6 +425,7 @@ header {
     box-shadow: 1px 1px 10px#acacac;
     display: flex;
     align-items: center;
+    margin: 8rem 0;
 
 }
 
@@ -433,7 +434,6 @@ header {
     gap: 0.75rem;
     flex-direction: column;
     font-size: 2rem;
-    width: 100%;
 }
 
 .suggestion-box div {
@@ -478,27 +478,16 @@ footer {
 }
 
 /* EXPAND ANIMATION */
- /* #expand-container {
-    position: relative;
-   overflow: hidden;
- }
- 
- #content{
-   margin-top: -100%;
-   transition: all 1s;
- }
- 
- #content.expanded {
-    margin-top: 0;
-    transform: translateY(100%)
- }
-
- .expanded {
-    animation-name: slide-in;
-    animation-duration: 1s;
- }
- 
- .collapsed {
-    background-color: red;
-    transform: translateY(-100%)
- }   */
+.wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 1s ease-out;
+  }
+  
+  .wrapper.is-open {
+    grid-template-rows: 1fr;
+  }
+  
+  #content {
+    overflow: hidden;
+  }
